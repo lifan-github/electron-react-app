@@ -115,6 +115,8 @@ npm start  //启动react项目
 
 npm run electron-start //启动electron
 
+//只有先启动3000端口号，再npm run electron-start 才能在开发模式下
+
 ```
 
 此时直接可以更改项目，command + R 刷新 electron 看到页面变化

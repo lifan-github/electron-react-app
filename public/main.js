@@ -1,6 +1,7 @@
 const {app, BrowserWindow} = require('electron');
 const path = require('path');
 const url = require('url');
+const pkg = require('../package.json');
 
 // 保持一个对于 window 对象的全局引用，如果你不这样做，
 // 当 JavaScript 对象被垃圾回收， window 会被自动地关闭
@@ -10,15 +11,17 @@ function createWindow() {
   // 创建浏览器窗口。
   win = new BrowserWindow({width: 800, height: 600});
 
-  // 然后加载应用的 index.html。========>>>>> 打包之后路径指向
-  /*win.loadURL(url.format({
-    pathname: path.join(__dirname, './build/index.html'),
-    protocol: 'file:',
-    slashes: true
-  }));*/
-
-  // ======>>>>>> 调试时，时时刷新
-  win.loadURL('http://localhost:3001/');
+  if(pkg.DEV){ //开发模式
+    // ======>>>>>> 调试时，时时刷新
+    win.loadURL('http://localhost:3000/');
+  }else{
+    // 然后加载应用的 index.html。========>>>>> 打包====>之后路径指向
+    win.loadURL(url.format({
+      pathname: path.join(__dirname, '/../build/index.html'),
+      protocol: 'file:',
+      slashes: true
+    }));
+  }
 
   // 打开开发者工具。
   win.webContents.openDevTools();
