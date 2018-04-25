@@ -9,16 +9,19 @@ let win;
 
 function createWindow() {
   // 创建浏览器窗口。
-  win = new BrowserWindow({width: 800, height: 600});
+  win = new BrowserWindow({
+    width: 800,
+    height: 600
+  });
 
-  if(pkg.DEV){ //开发模式
+  if (pkg.DEV) { //开发模式
     // 加载 react/redux 调试工具
     const loadDevtool = require('electron-load-devtool');
     loadDevtool(loadDevtool.REDUX_DEVTOOLS);
     loadDevtool(loadDevtool.REACT_DEVELOPER_TOOLS);
     // ======>>>>>> 调试时，时时刷新
     win.loadURL('http://localhost:3000/');
-  }else{
+  } else {
     // 然后加载应用的 index.html。========>>>>> 打包====>之后路径指向
     win.loadURL(url.format({
       pathname: path.join(__dirname, '/../build/index.html'),

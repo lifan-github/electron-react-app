@@ -2,7 +2,7 @@
   "name": "electron-react-app",
   "version": "0.1.0",
   "private": true,
-  "DEV": true,
+  "DEV": false,
   "author": "lifan",
   "description": "electron-react-app",
   "main": "./public/electron.js",
@@ -28,8 +28,14 @@
   "build": {
     "appId": "com.isoftstone.apptools",
     "productName": "Electron React",
+    "dmg": {
+      "icon": "./public/icon/icon.icns"
+    },
     "mac": {
-      "category": "public.app-category.developer-tools"
+      "icon": "./public/icon/icon.icns"
+    },
+    "win": {
+      "icon": "./public/icon/icon.ico"
     }
   }
 }
