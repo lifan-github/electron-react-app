@@ -19,6 +19,8 @@ function createWindow() {
     const loadDevtool = require('electron-load-devtool');
     loadDevtool(loadDevtool.REDUX_DEVTOOLS);
     loadDevtool(loadDevtool.REACT_DEVELOPER_TOOLS);
+    // 打开开发者工具。
+    win.webContents.openDevTools();
     // ======>>>>>> 调试时，时时刷新
     win.loadURL('http://localhost:3000/');
   } else {
@@ -29,9 +31,6 @@ function createWindow() {
       slashes: true
     }));
   }
-
-  // 打开开发者工具。
-  win.webContents.openDevTools();
 
   // 当 window 被关闭，这个事件会被触发。
   win.on('closed', () => {
