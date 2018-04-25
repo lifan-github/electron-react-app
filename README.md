@@ -2,6 +2,16 @@ electron react app
 
 ### React + Electron 搭建一个桌面应用
 
+## 环境配置打包、运行初始项目步骤
+
+```
+1、npm install
+2、npm run dist //npm run build && rm -rf dist && electron-builder
+
+//开发测试设置 package.json中 "DEV": true, 打包： false
+
+```
+
 #### 1、创建一个项目
 
 ```
