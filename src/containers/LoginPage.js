@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 
 import '../css/login.css';
 
@@ -12,7 +13,7 @@ export default class LoginPage extends Component {
     return (
       <div className="Login-container">
         <div className="Login-box">
-          <button className="Login-button">登录APP</button>
+          <Link className="Login-button" to="/home">进入home2222页</Link>
         </div>
       </div>
     )

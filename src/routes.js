@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
-import {Router, Route} from 'react-router';
+import {Router, Route, Switch } from 'react-router-dom';
 import {createMemoryHistory} from 'history';
 import configureStore from './store';
 //页面
 import LoginPage from './containers/LoginPage';
+import HomePage from './containers/home/HomePage';
 
 
 const syncHistoryWithStore = (store, history) => {
@@ -29,7 +30,10 @@ export default class AppRouter extends Component {
     return (
       <Provider store={store}>
         <Router history={routerHistory}>
-          <Route path="/" component={LoginPage}/>
+          <Switch>
+            <Route exact path="/" component={LoginPage}/>
+            <Route path="/home" component={HomePage}/>
+          </Switch>
         </Router>
       </Provider>
     )
