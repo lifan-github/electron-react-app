@@ -5,7 +5,7 @@
   "DEV": false,
   "author": "lifan",
   "description": "electron-react-app",
-  "main": "./public/main.js",
+  "main": "./public/electron.js",
   "homepage": "./",
   "dependencies": {
     "react": "^16.3.2",
@@ -18,8 +18,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron-start": "./node_modules/.bin/electron .",
-    "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "npm run build && rm -rf dist && electron-builder"
   },
   "devDependencies": {
     "electron": "^1.8.4",

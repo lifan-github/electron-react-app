@@ -130,3 +130,9 @@ npm run electron-start //启动electron
 "homepage":"."
 
 ```
+
+#### 参考文章
+
+1、https://hiyangguo.github.io/2018/03/27/build-a-app-width-electron-and-react/
+2、https://www.jianshu.com/p/5e41663825c6
+3、https://www.jianshu.com/p/578aacbe7980
