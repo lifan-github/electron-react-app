@@ -1,0 +1,23 @@
+.Login-container {
+    width: 100%;
+    height: 100%;
+    background-color: rebeccapurple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Login-box {
+    width: 400px;
+    height: 300px;
+    background-color: #d5abff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Login-button {
+    background-color: rebeccapurple;
+    color: #ffffff;
+}
