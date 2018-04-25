@@ -12,6 +12,10 @@ function createWindow() {
   win = new BrowserWindow({width: 800, height: 600});
 
   if(pkg.DEV){ //开发模式
+    // 加载 react/redux 调试工具
+    const loadDevtool = require('electron-load-devtool');
+    loadDevtool(loadDevtool.REDUX_DEVTOOLS);
+    loadDevtool(loadDevtool.REACT_DEVELOPER_TOOLS);
     // ======>>>>>> 调试时，时时刷新
     win.loadURL('http://localhost:3000/');
   }else{
@@ -59,7 +63,4 @@ app.on('activate', () => {
     createWindow()
   }
 });
-
-
-
 
