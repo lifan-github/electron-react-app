@@ -5,7 +5,7 @@ import {createMemoryHistory} from 'history';
 import configureStore from './store';
 //页面
 import LoginPage from './containers/LoginPage';
-import HomePage from './containers/home/HomePage';
+import MainPage from './containers/mainPage/MainPage';
 
 
 const syncHistoryWithStore = (store, history) => {
@@ -32,7 +32,7 @@ export default class AppRouter extends Component {
         <Router history={routerHistory}>
           <Switch>
             <Route exact path="/" component={LoginPage}/>
-            <Route path="/home" component={HomePage}/>
+            <Route path="/mainPage" component={MainPage}/>
           </Switch>
         </Router>
       </Provider>

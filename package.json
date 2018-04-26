@@ -2,7 +2,7 @@
   "name": "electron-react-app",
   "version": "0.1.0",
   "private": true,
-  "DEV": true,
+  "DEV": false,
   "author": "lifan",
   "description": "electron-react-app",
   "main": "./public/electron.js",

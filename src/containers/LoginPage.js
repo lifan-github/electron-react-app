@@ -15,9 +15,11 @@ export default class LoginPage extends Component {
     return (
       <div className="Login-container">
         <div className="Login-box">
-          <Link to="/home">
-            <Button className="Login-button">登录</Button>
+          <Link to="/mainPage">
+            <Button className="Login-button">登录1</Button>
           </Link>
+          <span className="icon-style"/>
+          <i className="icon-colud">&#xe64e;</i>
         </div>
       </div>
     )

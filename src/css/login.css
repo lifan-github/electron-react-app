@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     background-image: url("../images/login-bg.jpg");
-    background-repeat: no-repeat ;
+    background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
@@ -17,10 +17,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 2px 10px 30px rgba(0,0,0, 0.6);
+    box-shadow: 2px 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 .Login-button {
     background-color: #dbbfbe;
     color: #fff;
+}
+
+@font-face {
+    font-family: 'cloud';
+    font-style: normal;
+    font-weight: 400;
+    src: local('cloud'),
+    local('cloud'),
+    url(../fonts/iconfont.woff) format('woff');
+}
+
+.icon-colud {
+    font-family: 'cloud' !important;
+    color: red;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    font-weight: normal;
+    font-style: normal;
 }
