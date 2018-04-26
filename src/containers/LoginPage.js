@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
-
+import {Link} from 'react-router-dom';
+import {Button} from 'antd';
+import 'antd/dist/antd.css';
 import '../css/login.css';
+
 
 export default class LoginPage extends Component {
   constructor(props) {
@@ -13,7 +15,9 @@ export default class LoginPage extends Component {
     return (
       <div className="Login-container">
         <div className="Login-box">
-          <Link className="Login-button" to="/home">进入home2222页</Link>
+          <Link to="/home">
+            <Button className="Login-button">登录</Button>
+          </Link>
         </div>
       </div>
     )
