@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
-import { Button, Container } from 'reactstrap';
 import { connect } from 'react-redux';
-
+import { Button } from 'antd';
 import { signInWithCb } from '../store/fakeAuth';
 
 const propTypes = {
@@ -17,12 +16,12 @@ export function Login({ location, logged, signInWithCb }) {
   return logged ? (
     <Redirect to={from} />
   ) : (
-    <Container className="text-center page-layout__viewport">
-      <p>你必须登录才能进入-->{from.pathname}</p>
-      <Button color="primary" onClick={signInWithCb}>
-        登录
-      </Button>
-    </Container>
+    <div className="Login-container">
+        <div className="Login-box">
+          <Button type="primary" onClick={signInWithCb}>登录</Button>
+        </div>
+    </div>
+
   );
 }
 
