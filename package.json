@@ -5,6 +5,7 @@
   "DEV": true,
   "author": "lifan",
   "description": "electron-react-app",
+  "keywords": ["electron", "react", "antd"],
   "main": "./public/electron.js",
   "homepage": "./",
   "dependencies": {

@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Route, Redirect } from 'react-router-dom';
+import {Route, Redirect} from 'react-router-dom';
 
 const propTypes = {
-  isAuthenticated: PropTypes.bool,
+  isAuthenticated: PropTypes.bool.isRequired,
   component: PropTypes.func.isRequired
 };
 
 function PrivateRoute({
-  component: Component,
-  isAuthenticated = false,
-  ...rest
-}) {
+    component: Component,
+    isAuthenticated = false,
+    ...rest
+  }) {
   return (
     <Route
       {...rest}
@@ -22,7 +22,7 @@ function PrivateRoute({
           <Redirect
             to={{
               pathname: '/login',
-              state: { from: _props.location }
+              state: {from: _props.location}
             }}
           />
         )}
@@ -33,3 +33,4 @@ function PrivateRoute({
 PrivateRoute.propTypes = propTypes;
 
 export default PrivateRoute;
+

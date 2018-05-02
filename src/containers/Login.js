@@ -1,38 +1,36 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component} from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Button } from 'antd';
-import { signInWithCb } from '../store/fakeAuth';
+import {signIn} from '../redux/actions/SiginActions';
 
-const propTypes = {
-  signInWithCb: PropTypes.func.isRequired,
-  location: PropTypes.object.isRequired,
-  logged: PropTypes.bool.isRequired
-};
+class Login extends Component {
+  signIn(){
+    this.props.dispatch(signIn());
+  }
 
-export function Login({ location, logged, signInWithCb }) {
-  const { from } = location.state || { from: { pathname: '/' } };
-  return logged ? (
-    <Redirect to={from} />
-  ) : (
-    <div className="Login-container">
-        <div className="Login-box">
-          <Button type="primary" onClick={signInWithCb}>登录</Button>
+  render(){
+    const { from } = { from: { pathname: '/' } };
+    const {logged} = this.props.signInReducer;
+    if(logged){
+      return <Redirect to={from} />
+    }else{
+      return(
+        <div className="Login-container">
+          <div className="Login-box">
+            <Button type="primary" onClick={() => this.signIn()}>登录</Button>
+          </div>
         </div>
-    </div>
-
-  );
+      )
+    }
+  }
 }
 
-Login.propTypes = propTypes;
+function select(state) {
+  return {
+    signInReducer: state.SignInReducer
+  }
+}
 
-const mapStateToProps = state => ({
-  logged: state.logged
-});
 
-const mapDispatchToProps = {
-  signInWithCb
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(select)(Login);

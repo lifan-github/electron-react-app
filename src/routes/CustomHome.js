@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {Layout, Menu, Icon} from 'antd';
-import {signOutWithCb} from "../store/fakeAuth";
 import HeaderComponent from '../components/HeaderComponent';
 import HomePage from '../containers/home';
 import OrdersPage from '../containers/orders';
 import PlatfromsOne from '../containers/platfroms';
 import PlatfromsTwo from '../containers/platfroms/PlatfromsTwo';
 import AboutUs from '../containers/aboutUs';
+import {signOut} from '../redux/actions/SiginActions';
 
 const {Header, Content, Footer, Sider} = Layout;
 const SubMenu = Menu.SubMenu;
@@ -22,13 +22,20 @@ class CustomHome extends Component {
     }
   }
 
+  componentDidMount(){
+    console.log("4444")
+  }
+
   onCollapse = (collapsed) => {
     console.log(collapsed);
     this.setState({collapsed});
   };
 
+  signOut(){
+    this.props.dispatch(signOut())
+  }
+
   render() {
-    const {signOut} = this.props;
     return (
       <Layout style={{minHeight: '100vh'}}>
         <Sider
@@ -41,7 +48,7 @@ class CustomHome extends Component {
             <Menu.Item key="1">
               <Link to="/">
                 <Icon type="pie-chart"/>
-                <span>首页</span>
+                <span>新闻头条</span>
               </Link>
             </Menu.Item>
             <Menu.Item key="2">
@@ -72,7 +79,7 @@ class CustomHome extends Component {
         </Sider>
         <Layout>
           <Header style={{background: '#fff', padding: 0}}>
-            <HeaderComponent signOut={signOut}/>
+            <HeaderComponent signOut={() => this.signOut()}/>
           </Header>
           <Content>
             <div className="main-container">
@@ -95,10 +102,10 @@ class CustomHome extends Component {
 }
 
 
-const mapStateToProps = state => ({});
+function select(state) {
+  return {
+    signInReducer: state.SignInReducer
+  }
+}
 
-const mapDispatchToProps = {
-  signOut: signOutWithCb
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(CustomHome);
+export default connect(select)(CustomHome);
