@@ -23,7 +23,7 @@ class CustomHome extends Component {
   }
 
   componentDidMount(){
-    console.log("4444")
+    console.log("555")
   }
 
   onCollapse = (collapsed) => {
@@ -36,6 +36,8 @@ class CustomHome extends Component {
   }
 
   render() {
+    const {allNews} = this.props.homeReducers;
+    console.log(allNews,'homeReducers---->>>')
     return (
       <Layout style={{minHeight: '100vh'}}>
         <Sider
@@ -104,7 +106,7 @@ class CustomHome extends Component {
 
 function select(state) {
   return {
-    signInReducer: state.SignInReducer
+    homeReducers: state.HomeReducers
   }
 }
 

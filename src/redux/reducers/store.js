@@ -1,10 +1,12 @@
 import {combineReducers , createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
 /**
  * all reducers
  */
 import SignInReducer from './signReducers';
+import HomeReducers from './homeReducers';
 
 
 /**
@@ -13,6 +15,7 @@ import SignInReducer from './signReducers';
  */
 let middlewares = [
   thunk,
+  logger
 ];
 
 /**
@@ -21,6 +24,7 @@ let middlewares = [
  */
 const allReducers = combineReducers({
   SignInReducer,
+  HomeReducers
 });
 
 

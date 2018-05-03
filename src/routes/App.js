@@ -4,6 +4,7 @@ import {Provider} from 'react-redux';
 import Layout from './Layout';
 import store from '../redux/reducers/store';
 
+
 export default class App extends Component {
   render() {
     return (

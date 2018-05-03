@@ -1,36 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {Component} from 'react';
 import {Route, Redirect} from 'react-router-dom';
 
-const propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
-  component: PropTypes.func.isRequired
-};
-
-function PrivateRoute({
-    component: Component,
-    isAuthenticated = false,
-    ...rest
-  }) {
-  return (
-    <Route
-      {...rest}
-      render={_props =>
-        isAuthenticated ? (
-          <Component {..._props} />
-        ) : (
-          <Redirect
-            to={{
-              pathname: '/login',
-              state: {from: _props.location}
-            }}
-          />
-        )}
-    />
-  );
+export default class PrivateRoute extends Component {
+  render() {
+    const {isAuthenticated, customHome} = this.props;
+    if (isAuthenticated) {
+      return(
+        <Route component={customHome}/>
+      )
+    } else {
+      return(
+        <Redirect to={{pathname: '/login'}}/>
+      )
+    }
+  }
 }
-
-PrivateRoute.propTypes = propTypes;
-
-export default PrivateRoute;
 

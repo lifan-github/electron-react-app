@@ -5,7 +5,6 @@
     align-items: center;
     justify-content: center;
     background-image: url("../images/login-bg.jpg");
-    background-repeat: no-repeat;
     background-size: 100% 100%;
 }
 
@@ -31,7 +30,6 @@
 }
 
 .icon-colud {
-    font-family: 'cloud' !important;
     color: red;
     font-size: 30px;
     width: 30px;
