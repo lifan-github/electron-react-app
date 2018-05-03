@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {Route, Redirect} from 'react-router-dom';
 
 export default class PrivateRoute extends Component {
@@ -16,3 +17,8 @@ export default class PrivateRoute extends Component {
   }
 }
 
+
+PrivateRoute.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+  customHome: PropTypes.func.isRequired
+};

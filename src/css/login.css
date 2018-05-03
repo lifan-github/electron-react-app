@@ -24,12 +24,11 @@
  */
 @font-face {
     font-family: 'cloud';
-    src: local('cloud'),
-    local('cloud'),
-    url(../fonts/iconfont.woff) format('woff');
+    src: url(../fonts/iconfont.woff) format('woff');
 }
 
 .icon-colud {
+    font-family: 'cloud' !important;
     color: red;
     font-size: 30px;
     width: 30px;

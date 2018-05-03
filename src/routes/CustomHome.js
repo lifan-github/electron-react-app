@@ -9,6 +9,8 @@ import PlatfromsOne from '../containers/platfroms';
 import PlatfromsTwo from '../containers/platfroms/PlatfromsTwo';
 import AboutUs from '../containers/aboutUs';
 import {signOut} from '../redux/actions/SiginActions';
+import {getAllNews} from '../redux/actions/HomeActions';
+
 
 const {Header, Content, Footer, Sider} = Layout;
 const SubMenu = Menu.SubMenu;
@@ -23,7 +25,7 @@ class CustomHome extends Component {
   }
 
   componentDidMount(){
-    console.log("555")
+    this.props.dispatch(getAllNews())
   }
 
   onCollapse = (collapsed) => {
@@ -37,7 +39,7 @@ class CustomHome extends Component {
 
   render() {
     const {allNews} = this.props.homeReducers;
-    console.log(allNews,'homeReducers---->>>')
+    console.log(allNews,'homeR->>>')
     return (
       <Layout style={{minHeight: '100vh'}}>
         <Sider
