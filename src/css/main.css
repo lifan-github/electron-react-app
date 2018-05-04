@@ -102,3 +102,12 @@
     color: #fff;
     font-size: 20px;
 }
+
+.order-left-label {
+    color: #333;
+    font-weight: bold;
+}
+
+.order-right-label {
+    color: #666;
+}
