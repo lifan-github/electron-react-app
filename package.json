@@ -16,6 +16,7 @@
     "antd": "^3.4.3",
     "babel-plugin-import": "^1.7.0",
     "history": "^4.7.2",
+    "mockjs": "^1.0.1-beta3",
     "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",

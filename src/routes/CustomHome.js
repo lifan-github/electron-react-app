@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {Layout, Menu, Icon} from 'antd';
+import {Layout, Menu, Icon, BackTop, message} from 'antd';
 import HeaderComponent from '../components/HeaderComponent';
 import HomePage from '../containers/home';
 import OrdersPage from '../containers/orders';
@@ -9,7 +9,7 @@ import PlatfromsOne from '../containers/platfroms';
 import PlatfromsTwo from '../containers/platfroms/PlatfromsTwo';
 import AboutUs from '../containers/aboutUs';
 import {signOut} from '../redux/actions/SiginActions';
-import {getAllNews} from '../redux/actions/HomeActions';
+import {allNews} from '../redux/actions/HomeActions';
 
 
 const {Header, Content, Footer, Sider} = Layout;
@@ -25,7 +25,8 @@ class CustomHome extends Component {
   }
 
   componentDidMount(){
-    this.props.dispatch(getAllNews())
+    this.props.allNews();
+    this.loadingRquest();
   }
 
   onCollapse = (collapsed) => {
@@ -34,12 +35,19 @@ class CustomHome extends Component {
   };
 
   signOut(){
-    this.props.dispatch(signOut())
+    this.props.signOut();
   }
 
+  getAllNews(){
+    this.props.allNews();
+  }
+
+  loadingRquest = () => {
+    const hide = message.loading('Action in progress..', 0);
+    setTimeout(hide, 2500);
+  };
+
   render() {
-    const {allNews} = this.props.homeReducers;
-    console.log(allNews,'homeR->>>')
     return (
       <Layout style={{minHeight: '100vh'}}>
         <Sider
@@ -50,7 +58,7 @@ class CustomHome extends Component {
           <div className="main-logo"/>
           <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
-              <Link to="/">
+              <Link to="/" onClick={() => this.getAllNews()}>
                 <Icon type="pie-chart"/>
                 <span>新闻头条</span>
               </Link>
@@ -86,6 +94,9 @@ class CustomHome extends Component {
             <HeaderComponent signOut={() => this.signOut()}/>
           </Header>
           <Content>
+            <BackTop>
+              <div className="ant-back-top-inner">top</div>
+            </BackTop>
             <div className="main-container">
               <Switch>
                 <Route exact path="/" component={HomePage}/>
@@ -105,11 +116,11 @@ class CustomHome extends Component {
   }
 }
 
-
-function select(state) {
+export default connect((state) => {
   return {
     homeReducers: state.HomeReducers
   }
-}
+}, {allNews, signOut})(CustomHome)
 
-export default connect(select)(CustomHome);
+
+
