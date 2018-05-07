@@ -17,7 +17,7 @@ function createWindow() {
   if (pkg.DEV) { //开发模式
     // 加载 react/redux 调试工具
     const loadDevtool = require('electron-load-devtool');
-    loadDevtool(loadDevtool.REDUX_DEVTOOLS);
+    // loadDevtool(loadDevtool.REDUX_DEVTOOLS);
     loadDevtool(loadDevtool.REACT_DEVELOPER_TOOLS);
     // 打开开发者工具。
     win.webContents.openDevTools();

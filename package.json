@@ -45,9 +45,6 @@
   "build": {
     "appId": "com.isoftstone.apptools",
     "productName": "Electron React",
-    "dmg": {
-      "icon": "./public/icon/icon.icns"
-    },
     "mac": {
       "icon": "./public/icon/icon.icns"
     },
