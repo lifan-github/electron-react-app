@@ -35,7 +35,10 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "electron-start": "./node_modules/.bin/electron .",
-    "dist": "npm run build && rm -rf dist && electron-builder"
+    "pack": "electron-builder --dir",
+    "dist": "npm run build && rm -rf dist && electron-builder",
+    "dist:winx86": "electron-builder --platform win32 --arch ia32",
+    "dist:winx64": "electron-builder --platform win32 --arch x64"
   },
   "devDependencies": {
     "electron": "^1.8.4",
@@ -46,10 +49,13 @@
     "appId": "com.isoftstone.apptools",
     "productName": "Electron React",
     "mac": {
-      "icon": "./public/icon/icon.icns"
+      "icon": "build/icon/icon.icns"
     },
     "win": {
-      "icon": "./public/icon/icon.ico"
+      "icon": "build/icon/icon.ico"
+    },
+    "linux": {
+      "icon": "build/icon/icon.ico"
     }
   }
 }
