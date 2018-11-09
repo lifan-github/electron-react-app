@@ -11,13 +11,6 @@ class App extends Component {
           <h1 className="App-title">Welcome to React Electron App111</h1>
         </header>
         <p className="App-intro">hello electron react</p>
-        <p>你好 我来了</p>
-        <p>你好 我来了</p>
-        <p>你好 我来了</p>
-        <p>奶奶的 终于打包成功了</p>
-        <p>奶奶的 终于打包成功了</p>
-        <p>奶奶的 终于打包成功了</p>
-        <p>奶奶的 终于打包成功了</p>
       </div>
     );
   }
