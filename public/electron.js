@@ -8,10 +8,14 @@ const pkg = require('../package.json');
 let win;
 
 function createWindow() {
-  // 创建浏览器窗口。
+  // 创建浏览器窗口。并配置窗体的基本信息，配置好需要重启应用
   win = new BrowserWindow({
-    width: 800,
-    height: 600
+    title: "", //窗口默认title. 默认 "Electron"
+    width: 1000,
+    height: 700,
+    minWidth: 1000,
+    minHeight: 700,
+    // titleBarStyle: "hidden", //隐藏标题栏，内容充满整个窗口, 然后它依然在左上角，仍然受标准窗口控制
   });
 
   if (pkg.DEV) { //开发模式
