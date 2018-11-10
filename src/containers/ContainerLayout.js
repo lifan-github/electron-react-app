@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import SwitchRoot from '../containers/SwitchRoot';
 import '../styles/container-layout.css';
-import '../utils/fonts/iconfont.css';
 
 class SliderNav extends Component{
   constructor(props) {
