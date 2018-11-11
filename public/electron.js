@@ -15,6 +15,8 @@ function createWindow() {
     height: 700,
     minWidth: 1000,
     minHeight: 700,
+    maxWidth: 1340,
+    maxHeight: 900
     // titleBarStyle: "hidden", //隐藏标题栏，内容充满整个窗口, 然后它依然在左上角，仍然受标准窗口控制
   });
 

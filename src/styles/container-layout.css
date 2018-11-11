@@ -13,6 +13,7 @@
 
 .right-layout{
     flex: 1;
+    overflow-y: scroll;
     background-color: #f9f9f9;
 }
 

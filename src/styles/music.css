@@ -13,3 +13,152 @@
     color: rgba(0,0,0,0.8);
     text-decoration: none;
 }
+
+.music-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.switch-sub-page{
+    flex: 1;
+}
+
+/**推荐的样式**/
+/**===========旋转木马===============**/
+.root{
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+.slideBox{
+    width: 60%;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slide{
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+}
+
+.slide img{
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.masking{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s 0.2s linear;
+    cursor: pointer;
+    background: transparent;
+}
+
+.slide.middle{
+    left: 10%;
+     bottom: 0%;
+     width: 80%;
+     z-index: 33;
+ }
+
+.slide.start{
+    left: -10%;
+     bottom: 0%;
+     width: 75%;
+     z-index: 22;
+ }
+
+.slide.end{
+    right: -10%;
+     bottom: 0%;
+     width: 75%;
+     z-index: 22;
+ }
+
+.slide.normal{
+    left: 13%;
+     bottom: 0%;
+     width: 74%;
+     z-index: 11;
+ }
+
+.point{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -35px;
+    z-index: 999;
+    text-align: center;
+}
+
+.point span{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-left: 9px;
+}
+
+.point span:hover{
+    background-color: #ab2402;
+    cursor: pointer;
+}
+
+.point .hover{
+    background-color: #ab2402;
+}
+
+/**===========以上旋转木马===============**/
+
+
+/**发现音乐推荐的样式**/
+.container{
+    padding: 30px;
+}
+
+.hot-title{
+    font-size: 20px;
+    color: rgba(0,0,0,0.5);
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.hot-title span{
+    padding-bottom: 5px;
+    border-bottom: 4px solid #ddd;
+}
+
+.hot-music-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hot-list-box{
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.music-items-box{
+    width: 160px;
+    height: 160px;
+    background-color: #ddd;
+}
+
+.music-text{
+    width: 160px;
+    font-size: 14px;
+    color: rgba(0,0,0,0.8);
+    line-height: 20px;
+    margin-top: 10px;
+}
