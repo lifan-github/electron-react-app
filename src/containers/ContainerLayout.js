@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import SwitchRoot from '../containers/SwitchRoot';
+import {HashRouter as Router, Route, Switch, Redirect, NavLink} from 'react-router-dom';
+import Music from "./Music";
+import FM from "./FM";
+import MV from "./MV";
+import Friends from "./Friends";
+import Error from '../components/Error';
 import '../styles/container-layout.css';
+
 
 class SliderNav extends Component{
   constructor(props) {
@@ -35,13 +40,13 @@ class SliderNav extends Component{
     const {navData} = this.state;
     let list = navData.map((item, index) => {
        return(
-         <Link to={item.path} onClick={() => this.bindItems(item)}
+         <NavLink to={item.path} onClick={() => this.bindItems(item)}
               className={`nav-list ${item.selected ? "selected-style" : "defulat-style"}`}
               key={item.id}
          >
              <i className={`iconfont iconfont-style ${item.icon}`}/>
              <div className="list-item-text">{item.text}</div>
-         </Link>
+         </NavLink>
        )
     });
 
@@ -60,15 +65,25 @@ export default class ContainerLayout extends Component {
 
   render() {
     return (
-      <div className="container-layout">
-        <div className="left-layout">
-          <div className="recommended-text">推荐</div>
-          <SliderNav/>
+      <Router>
+        <div className="container-layout">
+          <div className="left-layout">
+            <div className="recommended-text">推荐</div>
+            <SliderNav/>
+          </div>
+          <div className="right-layout">
+            <Switch>
+              <Route exact path="/" component={Music}/>
+              <Route path="/music" component={Music}/>
+              <Route path="/fm" component={FM}/>
+              <Route path="/mv" component={MV}/>
+              <Route path="/friends" component={Friends}/>
+              <Route path="/error" component={Error} />
+              <Route path="*" render={() => <Redirect to="/error"/> }/>
+            </Switch>
+          </div>
         </div>
-        <div className="right-layout">
-          <SwitchRoot/>
-        </div>
-      </div>
+      </Router>
     )
   }
 }

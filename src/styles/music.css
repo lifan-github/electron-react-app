@@ -1,0 +1,15 @@
+.music-header{
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-nav-item{
+    font-size: 14px;
+    padding: 0 30px;
+    color: rgba(0,0,0,0.8);
+    text-decoration: none;
+}
