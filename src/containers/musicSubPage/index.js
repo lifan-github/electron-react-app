@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
+import {connect} from "react-redux";
+import MusicReducers from "../../redux/reducers/musicReducers";
 
-export default class Recommended extends Component {
+
+class Recommended extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -152,3 +155,10 @@ export default class Recommended extends Component {
     )
   }
 }
+
+export default connect((state) => {
+  console.log(state.MusicReducers,'hhhhhhhhhh')
+  return {
+    musicReducers: state.MusicReducers
+  }
+})(Recommended)
