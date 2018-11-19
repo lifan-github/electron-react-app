@@ -1,3 +1,3 @@
 
-//===>新闻头条
-export const GET_ALL_NEWS = 'GET_ALL_NEWS';
+//===>推荐中的音乐
+export const GET_ALL_MUSIC = 'GET_ALL_MUSIC';

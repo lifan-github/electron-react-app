@@ -1,27 +1,39 @@
 import * as types from '../constant/ActionsTypes';
-/*import Mock from "mockjs";
+import axios from 'axios';
+import config from "../../utils/config";
 
-let url = 'http://rapapi.org/mockjs/17332/api/list';
-export function allNews(){
+
+export function getMusic() {
   return dispatch => {
-    // loadingShow();
-    fetch(url + '?pageSize='+ 100 + '&pageNum=' + 1 + '&accessToken=' + '123456789')
-      .then((response) => response.json())
-      .then((responseJson) => {
-        let news = Mock.mock(responseJson);
-        console.log(news,'news');
-        dispatch(getAllNews(news));
+    axios.get(config.url, {
+      params: {
+        pageToken: 1,
+        kw: config.kw,
+        apikey: config.apikey
+      },
+      method: 'get',
+      timeout: 6000,
+      responseType: 'json',
+    })
+      .then(res => {
+        console.log(res,'res')
+        if(res.status === 200){
+          dispatch(getAllMusic(res.data.data))
+        }
       })
       .catch(err => {
-        console.log(err, 'err')
+        console.log(err,'err')
       })
   }
-}*/
+}
+
+
+
 
 //获取所有新闻
-export function getAllNews(data) {
+export function getAllMusic(data) {
   return {
-    type: types.GET_ALL_NEWS,
+    type: types.GET_ALL_MUSIC,
     data
   }
 }

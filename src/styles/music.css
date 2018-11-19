@@ -66,24 +66,42 @@
      bottom: 0%;
      width: 80%;
      z-index: 33;
+
+    /*进出动画*/
+    -webkit-transition: all 0.4s, opacity 0.4s ease-in-out;
+    -moz-transition: all 0.4s, opacity 0.4s ease-in-out;
+    -o-transition: all 0.4s, opacity 0.4s ease-in-out;
+    transition: all 0.4s, opacity 0.4s ease-in-out;
+    /*进出动画角度*/
+
  }
 
 .slide.start{
-    left: -10%;
+    left: -20%;
      bottom: 0%;
      width: 75%;
      z-index: 22;
+    transform: perspective(500px) scale(0.7, 0.7) rotateY(30deg);
+    -ms-transform:perspective(500px) scale(0.7, 0.7) rotateY(30deg);
+    -moz-transform:perspective(500px) scale(0.7, 0.7) rotateY(30deg);
+    -webkit-transform:perspective(500px) scale(0.7, 0.7) rotateY(30deg);
+    -o-transform:perspective(500px) scale(0.7, 0.7) rotateY(30deg);
  }
 
 .slide.end{
-    right: -10%;
+    right: -20%;
      bottom: 0%;
      width: 75%;
      z-index: 22;
+    transform: perspective(500px) scale(0.7, 0.7) rotateY(-30deg);
+    -ms-transform:perspective(500px) scale(0.7, 0.7) rotateY(-30deg);
+    -moz-transform:perspective(500px) scale(0.7, 0.7) rotateY(-30deg);
+    -webkit-transform:perspective(500px) scale(0.7, 0.7) rotateY(-30deg);
+    -o-transform:perspective(500px) scale(0.7, 0.7) rotateY(-30deg);
  }
 
 .slide.normal{
-    left: 13%;
+     left: 13%;
      bottom: 0%;
      width: 74%;
      z-index: 11;
@@ -115,6 +133,7 @@
 .point .hover{
     background-color: #ab2402;
 }
+
 
 /**===========以上旋转木马===============**/
 
@@ -152,7 +171,6 @@
 .music-items-box{
     width: 160px;
     height: 160px;
-    background-color: #ddd;
 }
 
 .music-text{
@@ -161,4 +179,10 @@
     color: rgba(0,0,0,0.8);
     line-height: 20px;
     margin-top: 10px;
+}
+
+.music-items-box img{
+    width: 160px;
+    height: 160px;
+    background-color: #ddd;
 }

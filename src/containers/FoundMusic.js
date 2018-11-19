@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
-import Recommended from './musicSubPage/index';
-import ListTop from './musicSubPage/ListTop';
-import Playlist from './musicSubPage/Playlist';
-import Host from './musicSubPage/Host';
-import NewMusic from './musicSubPage/NewMusic';
+import Recommended from './foundMusic/tuijian';
+import ListTop from './foundMusic/top/ListTop';
+import Playlist from './foundMusic/playList/Playlist';
+import Host from './foundMusic/zhubo/Host';
+import NewMusic from './foundMusic/newMusic/NewMusic';
 import '../styles/music.css';
 
 
-export default class Music extends Component {
+export default class FoundMusic extends Component {
   constructor(props) {
     super(props);
     this.state = {}

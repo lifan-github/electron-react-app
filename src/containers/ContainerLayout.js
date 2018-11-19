@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {HashRouter as Router, Route, Switch, Redirect, NavLink} from 'react-router-dom';
-import Music from "./Music";
+import FoundMusic from "./FoundMusic";
 import FM from "./FM";
 import MV from "./MV";
 import Friends from "./Friends";
@@ -73,8 +73,8 @@ export default class ContainerLayout extends Component {
           </div>
           <div className="right-layout">
             <Switch>
-              <Route exact path="/" component={Music}/>
-              <Route path="/music" component={Music}/>
+              <Route exact path="/" component={FoundMusic}/>
+              <Route path="/music" component={FoundMusic}/>
               <Route path="/fm" component={FM}/>
               <Route path="/mv" component={MV}/>
               <Route path="/friends" component={Friends}/>
